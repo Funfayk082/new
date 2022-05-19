@@ -1,11 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>{% block title %}Мой сайт{% endblock %} </title>
 </head>
 <body>
-    
+    <header>
+        <img class="logo" src="{% static 'pngwing.png'%}" alt="logo">
+        <ul class="menu__ul">
+            <li><a href="/articles/">Главная</a></li>
+            <li><a href="/articles/list/">Посты</a></li>
+            <li><a href="/articles/contacts/">Контакты</a></li>
+        </ul>
+    </header>
     {% block content %}{% endblock %}
 
 </body>

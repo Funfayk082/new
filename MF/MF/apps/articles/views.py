@@ -7,7 +7,13 @@ from .models import Article, Comment
 
 def index(request):
     latest_articles_list = Article.objects.order_by("-pub_date")[:5]
+    return render(request, 'articles/index.html', {'latest_articles_list': latest_articles_list})
+def list(request):
+    latest_articles_list = Article.objects.order_by("-pub_date")[:5]
     return render(request, 'articles/list.html', {'latest_articles_list': latest_articles_list})
+def contacts(request):
+    latest_articles_list = Article.objects.order_by("-pub_date")[:5]
+    return render(request, 'articles/contacts.html', {'latest_articles_list': latest_articles_list})
 
 def detail(request, article_id):
     try:
